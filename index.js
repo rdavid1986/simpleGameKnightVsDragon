@@ -80,6 +80,7 @@ function useHability(habilityIndex) {
     if (player.mp >= hability.mpCost) {
             enemy.hp -= hability.atk;
             player.mp -= hability.mpCost;
+            player.hp -= enemy.atk;
             updateBars();
             setTimeout(function(){
                 if(enemy.hp <= 0 && player.hp <= 0 || enemy.hp <= 0){
@@ -100,7 +101,7 @@ function useHability(habilityIndex) {
                 player.hp += hability.drainblood;
                 console.log(`Te curaste ${hability.drainblood}`);
             }
-            player.hp -= enemy.atk;
+            
         }else {
             console.log(`No tienes mp suficiente para usar ${hability.name}`);
         }
@@ -123,7 +124,7 @@ function basicAtk() {
     if(enemy.hp <= 0){
         setTimeout(function(){
             updateBars();
-            const text = document.getElementById("idTextArea");
+            alert("EnemyDefeat");
             location.reload();
         }, 200);
     }
@@ -136,6 +137,7 @@ function basicAtk() {
     } else {
         console.log(`Hiciste un daño de ${player.atk}`);
     }
+    player.hp-= enemy.atk;
     updateBars();
         //
 }
