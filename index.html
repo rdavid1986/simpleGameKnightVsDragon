@@ -1,0 +1,48 @@
+
+</html><!DOCTYPE html>
+<html>
+<head>
+	<title>Caballeros y Dragones</title>
+	<link rel="stylesheet" href="./index.css">
+</head>
+<body>
+	<h1>Caballeros y Dragones</h1>
+	
+	<div id="player">
+
+		<div class="name">Caballero</div>
+		<div class="hp__bars">
+			<div class="hp" id="player__hp"></div>
+		</div>
+		<div class="mp__bar">
+			<div class="mp" id="player__mp"></div>
+		</div>
+		<div class="botones">
+			<button class="boton" onclick="basicAtk('player')">Atacar</button>
+			<button class="boton" onclick="healing()">Curar</button>
+		</div>
+
+        <h3>Habilidades</h3>
+
+        <div class="habilities">
+            <button id="burningSwordButton" onclick="useHability(0)" class="boton" >Burning sword</button>
+
+            <button id="ascendentSwordButton" onclick="useHability(1)" class="boton">Ascendent sword</button>
+
+            <button id="vampirySwordButton" onclick="useHability(2)" class="boton">Vampiry sword</button>
+
+            <button id="swordCircleButton" onclick="useHability(3)" class="boton">Sword circle</button>
+        </div>
+		<div class="textArea" id="idTextArea"></div>
+        
+	</div>
+
+	<div id="enemy">
+		<div class="name">Dragón</div>
+		<div class="hp__bars">
+			<div class="hp" id="enemy__hp"></div>
+		</div>
+	</div>
+    <script src="./index.js"></script>
+</body>
+</html>
